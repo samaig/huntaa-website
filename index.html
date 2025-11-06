@@ -3,38 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huntaa - We Make Full Price Optional</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png">
 
+    <title>Huntaa - We Make Full Price Optional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
+<!-- Animated Background Orbs -->
+<div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+</div>
+
+<!-- Particle Canvas -->
 <canvas id="particles"></canvas>
 
+<!-- Navigation -->
 <nav>
     <div class="nav-container">
         <a href="#" class="logo">
-            <img src="./assets/logo.png" alt="Huntaa">
-            <span>Huntaa</span>
+            <img src="./assets/full_logo_transparent.png" alt="Huntaa" class="logo-img light-logo">
+            <img src="./assets/white_logo_transparent.png" alt="Huntaa" class="logo-img dark-logo">
         </a>
-        <ul class="nav-links">
-            <li><a href="#demo">How It Works</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#features">Features</a></li>
-        </ul>
-        <a href="https://chatgpt.com/g/g-6909c8748edc81919cda0fdc7379c5d3-huntaa-discount-code-finder" class="nav-cta"
-           target="_blank">Try Huntaa GPT</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#demo">How It Works</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+            <a href="https://chatgpt.com/g/g-6909c8748edc81919cda0fdc7379c5d3-huntaa-discount-code-finder"
+               class="nav-cta" target="_blank">Try Huntaa GPT</a>
+        </div>
     </div>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1><span class="we-make">We Make</span> <span class="full-price">Full Price</span> <span class="optional">Optional</span>
+            <h1>
+                <span class="we-make">We Make</span>
+                <span class="full-price">Full Price</span>
+                <span class="optional">Optional</span>
             </h1>
             <p>Find verified discount codes instantly for events, shopping, travel, and subscriptions. Huntaa searches
                 hundreds of sources automatically.</p>
@@ -61,6 +96,7 @@
     </div>
 </section>
 
+<!-- Demo Section -->
 <section class="section demo-section" id="demo">
     <div class="container">
         <div class="section-header">
@@ -85,16 +121,15 @@
             </div>
             <div class="demo-footer">
                 <button class="demo-replay" id="replay">↻ Replay</button>
-                <div class="demo-footer-center">
-                    <div class="demo-disclaimer">Note: This is a simplified demonstration. Actual UI may vary.</div>
-                </div>
+                <div class="demo-disclaimer">Note: This is a simplified demonstration. Actual UI may vary.</div>
                 <div class="demo-note">Click any category to see different searches</div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section" id="categories">
+<!-- Categories Section -->
+<section class="section categories-section" id="categories">
     <div class="container">
         <div class="section-header">
             <div class="section-label">Save On Everything</div>
@@ -104,8 +139,8 @@
         <div class="categories-grid">
             <div class="category-card">
                 <div class="category-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
                         <polyline points="17 2 12 7 7 2"></polyline>
                     </svg>
@@ -115,8 +150,8 @@
             </div>
             <div class="category-card">
                 <div class="category-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <circle cx="9" cy="21" r="1"></circle>
                         <circle cx="20" cy="21" r="1"></circle>
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -127,12 +162,9 @@
             </div>
             <div class="category-card">
                 <div class="category-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                        <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
-                        <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
-                        <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
                         <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                         <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
@@ -142,8 +174,8 @@
             </div>
             <div class="category-card">
                 <div class="category-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <polygon points="23 7 16 12 23 17 23 7"></polygon>
                         <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                     </svg>
@@ -153,8 +185,8 @@
             </div>
             <div class="category-card">
                 <div class="category-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                         <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
                         <line x1="6" y1="1" x2="6" y2="4"></line>
@@ -167,8 +199,8 @@
             </div>
             <div class="category-card">
                 <div class="category-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                     </svg>
@@ -180,6 +212,7 @@
     </div>
 </section>
 
+<!-- Features Section -->
 <section class="section features-section" id="features">
     <div class="container">
         <div class="section-header">
@@ -189,8 +222,8 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.35-4.35"></path>
                     </svg>
@@ -201,8 +234,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                 </div>
@@ -211,8 +244,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                     </svg>
                 </div>
@@ -221,8 +254,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <circle cx="12" cy="12" r="6"></circle>
                         <circle cx="12" cy="12" r="2"></circle>
@@ -233,8 +266,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <line x1="18" y1="20" x2="18" y2="10"></line>
                         <line x1="12" y1="20" x2="12" y2="4"></line>
                         <line x1="6" y1="20" x2="6" y2="14"></line>
@@ -245,8 +278,8 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
                         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                     </svg>
@@ -258,6 +291,7 @@
     </div>
 </section>
 
+<!-- Three Steps Section -->
 <section class="section">
     <div class="container">
         <div class="section-header">
@@ -287,6 +321,7 @@
     </div>
 </section>
 
+<!-- CTA Section -->
 <section class="cta-section">
     <div class="container">
         <h2>Start Saving Today</h2>
@@ -296,18 +331,19 @@
     </div>
 </section>
 
+<!-- Footer Brand Section -->
 <div class="footer-brand-section">
-    <div class="container">
-        <div class="brand-outline">Huntaa</div>
-    </div>
+    <div class="brand-outline">HUNTAA</div>
 </div>
 
+<!-- Footer -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <img src="./assets/logo.png" alt="Huntaa">
-                <p class="footer-tagline">Savings Simplified.</p>
+                <img src="./assets/full_logo_transparent.png" alt="Huntaa" class="logo-img light-logo">
+                <img src="./assets/white_logo_transparent.png" alt="Huntaa" class="logo-img dark-logo">
+                <div class="footer-tagline">Savings Simplified.</div>
                 <p>Find verified discount codes instantly for events, shopping, travel, and more.</p>
             </div>
             <div class="footer-section">
@@ -320,51 +356,86 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Resources</h4>
-                <ul class="footer-links">
-                    <li><a href="#demo">How It Works</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
                 <h4>Company</h4>
                 <ul class="footer-links">
                     <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
                     <li><a href="#">Privacy</a></li>
                     <li><a href="#">Terms</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Support</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Huntaa. All rights reserved.</p>
-            <p>Verified savings, simplified.</p>
+            <div>© 2025 Huntaa. All rights reserved.</div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+            <div>Empowering smart shoppers worldwide</div>
         </div>
     </div>
 </footer>
 
+<!-- Scroll to Top Button -->
 <div class="scroll-to-top" id="scrollToTop">
-    <svg class="scroll-progress-ring">
+    <svg class="scroll-progress-ring" width="56" height="56">
         <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1"/>
-                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1"/>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFB74D;stop-opacity:1"/>
+                <stop offset="100%" style="stop-color:#FFA726;stop-opacity:1"/>
             </linearGradient>
         </defs>
-        <circle class="scroll-progress-ring__circle" cx="24" cy="24" r="22"></circle>
-        <circle class="scroll-progress-ring__progress" cx="24" cy="24" r="22" id="progressCircle"></circle>
+        <circle class="scroll-progress-ring__circle" cx="28" cy="28" r="24"></circle>
+        <circle class="scroll-progress-ring__progress" id="progressCircle" cx="28" cy="28" r="24"></circle>
     </svg>
     <div class="scroll-to-top__button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="19" x2="12" y2="5"></line>
-            <polyline points="5 12 12 5 19 12"></polyline>
+            <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </div>
 </div>
 
 <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Save preference
+        const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    });
+
+    // Particle System
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -376,14 +447,14 @@
 
     function init() {
         particles = [];
-        const count = Math.min(Math.floor((canvas.width * canvas.height) / 20000), 60);
+        const count = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 80);
         for (let i = 0; i < count; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.2,
-                vy: (Math.random() - 0.5) * 0.2,
-                r: Math.random() * 1.5 + 0.5
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: (Math.random() - 0.5) * 0.3,
+                r: Math.random() * 2 + 0.5
             });
         }
     }
@@ -395,16 +466,15 @@
             p.y += p.vy;
             if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
             if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-            ctx.fillStyle = 'rgba(245, 158, 11, 0.6)';
+
+            const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
+            gradient.addColorStop(0, 'rgba(245, 124, 0, 0.7)');
+            gradient.addColorStop(1, 'rgba(245, 124, 0, 0)');
+
+            ctx.fillStyle = gradient;
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
             ctx.fill();
-
-            // Add glow effect
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = 'rgba(245, 158, 11, 0.5)';
-            ctx.fill();
-            ctx.shadowBlur = 0;
         });
         requestAnimationFrame(animate);
     }
@@ -417,6 +487,7 @@
         init();
     });
 
+    // Demo System
     const scenarios = {
         concert: {
             q: "I want to see Coldplay in London next month",
@@ -448,7 +519,7 @@
         return new Promise(r => setTimeout(r, ms));
     }
 
-    async function typeText(el, text, speed = 15) {
+    async function typeText(el, text, speed = 20) {
         el.innerHTML = '';
         for (let i = 0; i < text.length; i++) {
             if (!animating) break;
@@ -469,27 +540,27 @@
         status.textContent = 'Analyzing...';
         content.innerHTML = '<div class="search-box" id="sb"></div><div class="search-status" id="ss">Searching for discount codes...</div><div class="results" id="res"></div>';
 
-        await sleep(300);
+        await sleep(400);
         await typeText(document.getElementById('sb'), s.q);
 
-        await sleep(900);
+        await sleep(1000);
         document.getElementById('ss').classList.add('visible');
         status.textContent = 'Searching...';
 
-        await sleep(1600);
+        await sleep(1800);
         document.getElementById('ss').textContent = 'Found ' + s.codes.length + ' verified codes';
 
-        await sleep(600);
+        await sleep(700);
         document.getElementById('res').innerHTML = s.codes.map(c => `
-                <div class="code-card">
-                    <div class="code-badge">${c.code}</div>
-                    <div class="code-info">
-                        <h4>${c.discount}</h4>
-                        <p>${c.valid}</p>
-                    </div>
-                    <div class="savings">Save ${c.save}</div>
-                </div>
-            `).join('');
+        <div class="code-card">
+            <div class="code-badge">${c.code}</div>
+            <div class="code-info">
+                <h4>${c.discount}</h4>
+                <p>${c.valid}</p>
+            </div>
+            <div class="savings">Save ${c.save}</div>
+        </div>
+    `).join('');
         document.getElementById('res').classList.add('visible');
         status.textContent = 'Complete';
 
@@ -510,18 +581,20 @@
         if (!animating) run();
     });
 
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', function (e) {
             e.preventDefault();
             const t = document.querySelector(this.getAttribute('href'));
-            if (t) t.scrollIntoView({behavior: 'smooth'});
+            if (t) t.scrollIntoView({behavior: 'smooth', block: 'start'});
         });
     });
 
+    // Intersection Observer for Demo
     const obs = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting && !animating) {
-                setTimeout(run, 700);
+                setTimeout(run, 800);
                 obs.disconnect();
             }
         });
@@ -529,7 +602,7 @@
 
     obs.observe(document.querySelector('.demo-section'));
 
-    // Scroll to top functionality with progress ring
+    // Scroll to Top with Progress
     const scrollToTopBtn = document.getElementById('scrollToTop');
     const progressCircle = document.getElementById('progressCircle');
     const radius = progressCircle.r.baseVal.value;
@@ -542,11 +615,9 @@
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrollPercent = scrollTop / docHeight;
-        const offset = circumference - (scrollPercent * circumference);
+        progressCircle.style.strokeDashoffset = circumference - (scrollPercent * circumference);
 
-        progressCircle.style.strokeDashoffset = offset;
-
-        if (scrollTop > 300) {
+        if (scrollTop > 400) {
             scrollToTopBtn.classList.add('visible');
         } else {
             scrollToTopBtn.classList.remove('visible');
@@ -562,7 +633,6 @@
         });
     });
 
-    // Initialize on load
     updateScrollProgress();
 </script>
 </body>
