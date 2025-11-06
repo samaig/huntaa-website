@@ -466,7 +466,7 @@
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
     const theme = localStorage.getItem('huntaa_theme');
-    if (theme === 'dark') body.classList.add('dark-mode');
+    if (theme !== 'light') body.classList.add('dark-mode');
 
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
