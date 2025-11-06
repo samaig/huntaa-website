@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6X574Q1V"></script>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6X574Q1V"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-GB6X574Q1V');
-    </script>
+    </script>-->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -465,12 +465,12 @@
     // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
-    const theme = localStorage.getItem('theme');
+    const theme = localStorage.getItem('huntaa_theme');
     if (theme === 'dark') body.classList.add('dark-mode');
 
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
-        localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        localStorage.setItem('huntaa_theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
     // Hamburger Menu
@@ -689,6 +689,110 @@
     });
 
     updateScrollProgress();
+
+    // Cookie Consent Management - Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('acceptCookies');
+        const rejectBtn = document.getElementById('rejectCookies');
+        const dismissBtn = document.getElementById('dismissCookies');
+
+        // Safety check - ensure all elements exist
+        if (!cookieBanner || !acceptBtn || !rejectBtn || !dismissBtn) {
+            console.error('Cookie banner elements not found!');
+            return;
+        }
+
+        // Check if user has already made a choice
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('huntaa_cookie_consent');
+            console.log('Cookie consent status:', consent || 'none');
+
+            if (!consent) {
+                // No consent recorded, show banner after a brief delay
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                    console.log('Cookie banner shown');
+                }, 1000);
+            } else if (consent === 'accepted' || consent === 'dismissed') {
+                // User accepted OR dismissed (both allow analytics)
+                console.log('Loading analytics - consent:', consent);
+                loadAnalytics();
+            } else if (consent === 'rejected') {
+                console.log('Analytics rejected by user');
+            }
+        }
+
+        // Load Google Analytics (when accepted or dismissed)
+        function loadAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-GB6X574Q1V';
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GB6X574Q1V');
+            console.log('✅ Analytics loaded - User accepted/dismissed cookies');
+        }
+
+        // Accept cookies (permanent - never shows again)
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('huntaa_cookie_consent', 'accepted');
+            cookieBanner.classList.remove('show');
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 400);
+            loadAnalytics();
+            console.log('✅ User accepted cookies');
+        });
+
+        // Reject cookies (permanent - never shows again, NO analytics)
+        rejectBtn.addEventListener('click', () => {
+            localStorage.setItem('huntaa_cookie_consent', 'rejected');
+            cookieBanner.classList.remove('show');
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 400);
+            console.log('❌ User rejected analytics');
+        });
+
+        // Dismiss/Maybe Later (closes banner, loads analytics, shows again next visit)
+        dismissBtn.addEventListener('click', () => {
+            localStorage.setItem('huntaa_cookie_consent', 'dismissed');
+            cookieBanner.classList.remove('show');
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 400);
+            loadAnalytics();
+            console.log('⏰ User dismissed - analytics loaded, will show again next visit');
+            // Remove the 'dismissed' status so banner shows on next visit
+            setTimeout(() => {
+                localStorage.removeItem('huntaa_cookie_consent');
+            }, 500);
+        });
+
+        // Initialize on page load
+        checkCookieConsent();
+    });
 </script>
+
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+        <div class="cookie-icon">🍪</div>
+        <div class="cookie-text">
+            <h3>We value your privacy</h3>
+            <p>We use essential cookies for site functionality (always active) and would like to use analytics cookies to understand how you use our site and improve your experience.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn cookie-btn-reject" id="rejectCookies">Reject Analytics</button>
+            <button class="cookie-btn cookie-btn-dismiss" id="dismissCookies">Maybe Later</button>
+            <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept All</button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
