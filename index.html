@@ -1,2409 +1,1250 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en-GB" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./assets/favicon.png">
 
-    <title>Huntaa - Find the Best Deals with AI-Powered Search</title>
-    <meta name="title" content="Huntaa - Verified Discount Codes UK | AI-Powered Promo Code Finder">
+    <title>Huntaa AI</title>
     <meta name="description"
           content="Find verified discount codes and working promo codes for ASOS, Nike, Amazon, Airbnb & 1000+ brands. AI-verified savings on shopping, travel, events & subscriptions. Always current, always working.">
     <meta name="keywords"
-          content="black friday, black friday deals, christmas deals, christmas eve, thanksgiving dinner, christmas travel, new year travel, new year deals, christmas gifts, christmas offers, christmas, new year gifts, new year, deepseek, UK discounts, tech discounts, discounts, voucher, voucher code, vouchers, discount, promo, promo codes, coupons, coupon code, deals, verified discount codes, student discount codes, discount code, student discounts, working promo codes, discount codes UK, voucher codes, AI discount finder, ASOS promo code, Nike discount codes, student discounts UK, Black Friday codes, verified savings">
-    <meta name="author" content="Huntaa">
+          content="black friday, Black Friday deals, valentines day deals, christmas deals, christmas eve, thanksgiving dinner, christmas travel, new year travel, new year deals, christmas gifts, christmas offers, christmas, new year gifts, new year, deepseek, UK discounts, tech discounts, discounts, voucher, voucher code, vouchers, discount, promo, promo codes, coupons, coupon code, deals, verified discount codes, student discount codes, discount code, student discounts, working promo codes, discount codes UK, voucher codes, AI discount finder, ASOS promo code, Nike discount codes, student discounts UK, Black Friday codes, verified savings">
+    <meta name="author" content="Samuel Aigbotsua">
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://huntaa.com/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://huntaa.com/">
-    <meta property="og:title" content="Huntaa - Verified Discount Codes UK | AI-Powered Savings">
+    <meta property="og:title" content="Huntaa - Verified Discount Codes | AI-Powered Savings">
     <meta property="og:description"
           content="Find verified discount codes and working promo codes for 1000+ brands. AI-verified, always current, instant results.">
     <meta property="og:image" content="https://huntaa.com/assets/og-image.png">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    <!-- Custom Tailwind Configuration with EXACT color scheme -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#FFF4ED',
-                            100: '#FFE6D5',
-                            200: '#FFCCAA',
-                            300: '#FFA874',
-                            400: '#FF7A3C',
-                            500: '#FF6B35',
-                            600: '#E84A11',
-                            700: '#C13B0F',
-                            800: '#9A3214',
-                            900: '#7C2D14',
-                            950: '#4D1A0A',
-                        },
-                        secondary: {
-                            50: '#E6F7FB',
-                            100: '#C2EDF5',
-                            200: '#8CDDED',
-                            300: '#4FC8E0',
-                            400: '#1BB8D4',
-                            500: '#00B4D8',
-                            600: '#0090AC',
-                            700: '#007187',
-                            800: '#005765',
-                            900: '#00454F',
-                            950: '#002A30',
-                        },
-                        success: {
-                            50: '#E6FAF5',
-                            100: '#B3F1DF',
-                            200: '#80E8C9',
-                            300: '#4DDFB3',
-                            400: '#1AD69D',
-                            500: '#06D6A0',
-                            600: '#05AB80',
-                            700: '#048060',
-                            800: '#035540',
-                            900: '#022A20',
-                        },
-                        warning: {
-                            50: '#FFF9E6',
-                            100: '#FFEEB8',
-                            200: '#FFE38A',
-                            300: '#FFD85C',
-                            400: '#FFCD2E',
-                            500: '#FFB627',
-                            600: '#E69500',
-                            700: '#B37400',
-                            800: '#805300',
-                            900: '#4D3200',
-                        },
-                        error: {
-                            50: '#FEE7EC',
-                            100: '#FCC0CD',
-                            200: '#FA99AE',
-                            300: '#F8728F',
-                            400: '#F64B70',
-                            500: '#EF476F',
-                            600: '#D32851',
-                            700: '#A71F3F',
-                            800: '#7B162E',
-                            900: '#4F0E1D',
-                        },
-                        neutral: {
-                            50: '#F9FAFB',
-                            100: '#F3F4F6',
-                            200: '#E5E7EB',
-                            300: '#D1D5DB',
-                            400: '#9CA3AF',
-                            500: '#6B7280',
-                            600: '#4B5563',
-                            700: '#374151',
-                            800: '#1F2937',
-                            900: '#111827',
-                            950: '#030712',
-                        },
-                    },
-                },
-            },
-        };
-    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Smooth scroll */
+        /* ---------------------------------------------------------
+           1. DESIGN TOKENS (Soft & Earthy)
+           --------------------------------------------------------- */
+        :root {
+            /* LIGHT MODE (Huntaa Sand Theme) */
+            --bg-body: #FFF9F5; /* Very Pale Warm Sand */
+            --bg-surface: #FFFFFF; /* Clean White */
+            --bg-glass: rgba(255, 255, 255, 0.90);
+            --bg-subtle: #F5EBE6; /* Subtle Warmth */
+
+            --text-main: #2D2A26; /* Soft Charcoal */
+            --text-muted: #78716C; /* Stone Grey */
+
+            /* BRAND COLOURS (Soft Terra Cotta) */
+            --primary: #E08560; /* Soft Terra Cotta / Muted Clay */
+            --primary-hover: #CD724E; /* Darker Clay */
+            --primary-glow: rgba(224, 133, 96, 0.15); /* Soft Glow */
+
+            --secondary: #6B9AC4; /* Muted Steel Blue (Accent) */
+
+            --border: #E8DFD8;
+            --shadow-soft: 0 4px 20px -4px rgba(224, 133, 96, 0.08);
+            --shadow-hover: 0 10px 30px -5px rgba(224, 133, 96, 0.15);
+
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 100px;
+        }
+
+        [data-theme="dark"] {
+            /* DARK MODE (Huntaa Gunmetal) */
+            --bg-body: #1C1B1A; /* Warm Black */
+            --bg-surface: #262524; /* Dark Stone */
+            --bg-glass: rgba(38, 37, 36, 0.95);
+            --bg-subtle: #3F3E3C;
+
+            --text-main: #F5F5F4; /* Stone White */
+            --text-muted: #A8A29E; /* Warm Grey */
+
+            /* BRAND COLOURS (Lighter Clay for Dark Mode) */
+            --primary: #EFA686; /* Soft Salmon/Clay */
+            --primary-hover: #E08560;
+            --primary-glow: rgba(239, 166, 134, 0.15);
+
+            --border: #3F3E3C;
+            --shadow-soft: 0 4px 20px -4px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 10px 40px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ---------------------------------------------------------
+           2. GLOBAL RESET
+           --------------------------------------------------------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
         }
 
-        /* Gradient text - EXACT from your config */
-        .gradient-text {
-            background: linear-gradient(to right, #FF6B35, #00B4D8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
         }
 
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out forwards;
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
         }
 
-        .animate-delay-1 {
-            animation-delay: 0.1s;
-            opacity: 0;
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
         }
 
-        .animate-delay-2 {
-            animation-delay: 0.2s;
-            opacity: 0;
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        .animate-delay-3 {
-            animation-delay: 0.3s;
-            opacity: 0;
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
         }
 
-        .animate-delay-4 {
-            animation-delay: 0.4s;
-            opacity: 0;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
         }
 
-        /* Card hover effects */
-        .card {
-            transition: all 0.3s ease;
+        ul {
+            list-style: none;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
         }
 
-        /* Button styles - EXACT from your Button component */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            background: var(--bg-surface);
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .eyebrow:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ---------------------------------------------------------
+           3. UI COMPONENTS
+           --------------------------------------------------------- */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            height: 2.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-pill);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            gap: 8px;
         }
 
         .btn-primary {
-            background-color: #FF6B35;
+            background-color: var(--primary);
             color: white;
+            box-shadow: 0 4px 15px var(--primary-glow);
         }
 
         .btn-primary:hover {
-            background-color: #E84A11;
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--primary-glow);
         }
 
-        .btn-ghost {
-            color: #374151;
+        .card {
+            background: var(--bg-surface);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .btn-ghost:hover {
-            background-color: #F3F4F6;
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
         }
 
-        .dark .btn-ghost {
-            color: #D1D5DB;
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--bg-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            border: 1px solid var(--border);
         }
 
-        .dark .btn-ghost:hover {
-            background-color: #1F2937;
+        /* Removed Gradient Text Utility - Using Primary Color */
+        .text-highlight {
+            color: var(--primary);
         }
 
-        .btn-outline {
-            border: 2px solid #FF6B35;
-            color: #FF6B35;
-            background: transparent;
+        /* ---------------------------------------------------------
+           4. NAVIGATION
+           --------------------------------------------------------- */
+        .navbar {
+            position: sticky;
+            top: 20px;
+            width: 95%;
+            max-width: 900px;
+            margin: 0 auto;
+            z-index: 1000;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-pill);
+            padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s;
         }
 
-        .btn-outline:hover {
-            background: #FFF4ED;
+        /* Clean Modern Text Logo - No Icon */
+        .logo-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: -0.04em;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
         }
 
-        .dark .btn-outline:hover {
-            background: #4D1A0A;
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-right: auto;
+            margin-left: 2rem;
         }
 
-        .btn-lg {
-            height: 3rem;
-            padding: 0 1.5rem;
-            font-size: 1rem;
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.2s;
         }
 
-        .btn-xl {
-            height: 3.5rem;
-            padding: 0 2rem;
-            font-size: 1.125rem;
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
-        /* Section spacing */
-        .section {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-
-        @media (min-width: 768px) {
-            .section {
-                padding-top: 4rem;
-                padding-bottom: 4rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .section {
-                padding-top: 6rem;
-                padding-bottom: 6rem;
-            }
-        }
-
-        /* Mobile menu styles */
-        .mobile-menu-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 40;
-        }
-
-        .mobile-menu-overlay.open {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .mobile-menu-panel {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 280px;
-            max-width: 85vw;
-            background: white;
-            transform: translateX(100%);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 50;
-            overflow-y: auto;
-        }
-
-        .dark .mobile-menu-panel {
-            background: #111827;
-        }
-
-        .mobile-menu-panel.open {
-            transform: translateX(0);
-        }
-
-        /* Hamburger animation */
-        .hamburger {
-            width: 24px;
-            height: 20px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            display: block;
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: currentColor;
-            border-radius: 2px;
-            left: 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hamburger span:nth-child(1) {
-            top: 0;
-        }
-
-        .hamburger span:nth-child(2) {
-            top: 9px;
-        }
-
-        .hamburger span:nth-child(3) {
-            top: 18px;
-        }
-
-        .hamburger.open span:nth-child(1) {
-            top: 9px;
-            transform: rotate(45deg);
-        }
-
-        .hamburger.open span:nth-child(2) {
-            opacity: 0;
-            transform: translateX(10px);
-        }
-
-        .hamburger.open span:nth-child(3) {
-            top: 9px;
-            transform: rotate(-45deg);
-        }
-
-        /* Demo Section Styles */
-        .demo-chip {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
+        .nav-actions {
+            display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            border: 2px solid #E5E7EB;
         }
 
-        .demo-chip:hover {
-            border-color: #FF6B35;
-            background-color: #FFF4ED;
-        }
-
-        .dark .demo-chip:hover {
-            background-color: #4D1A0A;
-        }
-
-        .demo-chip.active {
-            border-color: #FF6B35;
-            background-color: #FF6B35;
-            color: white;
-        }
-
-        .typing-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background-color: #FF6B35;
-            margin-left: 2px;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% {
-                opacity: 1;
-            }
-            51%, 100% {
-                opacity: 0;
-            }
-        }
-
-        .demo-content {
-            min-height: 300px;
-        }
-
-        .result-card {
-            animation: slideIn 0.4s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .status-message {
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Hero Demo Specific Styles */
-        .hero-demo-chip {
+        .theme-toggle {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-flex;
+            color: var(--text-muted);
+            width: 36px;
+            height: 36px;
+            display: flex;
             align-items: center;
-            gap: 0.375rem;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 0.875rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-        }
-
-        .hero-demo-chip:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        .hero-demo-chip.active {
-            background: rgba(255, 107, 53, 0.9);
-            border-color: #FF6B35;
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-        }
-
-        @keyframes heroSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px) scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .hero-result-card {
-            animation: heroSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            opacity: 0;
-        }
-
-        .hero-result-card:nth-child(2) {
-            animation-delay: 0.15s;
-        }
-
-        @keyframes statusPulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.7;
-            }
-        }
-
-        .status-pulse {
-            animation: statusPulse 1s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-4px);
-            }
-        }
-
-        .float-icon {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Confetti Styles */
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            opacity: 0;
-            pointer-events: none;
-            animation: confettiFall 3s ease-out forwards;
-        }
-
-        .confetti-circle {
+            justify-content: center;
             border-radius: 50%;
+            transition: all 0.2s;
         }
 
-        .confetti-square {
-            border-radius: 2px;
+        .theme-toggle:hover {
+            background: var(--bg-surface);
+            color: var(--text-main);
+            border-color: var(--text-main);
         }
 
-        .confetti-triangle {
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 10px solid currentColor;
-            background: transparent !important;
+        .mobile-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+            margin-left: 0.5rem;
+            padding-right: 1rem;
         }
 
-        @keyframes confettiFall {
-            0% {
-                opacity: 1;
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(120px) rotate(720deg) scale(0.5);
-            }
-        }
-
-        /* Coming Soon Modal */
-        .modal-overlay {
+        /* MOBILE DRAWER */
+        .mobile-overlay {
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
             backdrop-filter: blur(4px);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
         }
 
-        .modal-overlay.open {
+        .mobile-overlay.open {
             opacity: 1;
-            visibility: visible;
+            pointer-events: auto;
         }
 
-        .modal-content {
-            background: white;
-            border-radius: 1.5rem;
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100vh;
+            background: var(--bg-surface);
+            border-left: 1px solid var(--border);
             padding: 2.5rem;
-            max-width: 420px;
-            width: 100%;
-            text-align: center;
-            transform: scale(0.9) translateY(20px);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .dark .modal-content {
-            background: #1F2937;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        .mobile-menu.open {
+            right: 0;
         }
 
-        .modal-overlay.open .modal-content {
-            transform: scale(1) translateY(0);
-            opacity: 1;
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
         }
 
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+        .close-btn {
+            background: none;
             border: none;
-            background: #F3F4F6;
-            color: #6B7280;
             cursor: pointer;
+            color: var(--text-muted);
+            padding: 5px;
+        }
+
+        .mobile-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .dark .modal-close {
-            background: #374151;
-            color: #9CA3AF;
+        .mobile-links a {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+            transition: color 0.2s;
         }
 
-        .modal-close:hover {
-            background: #E5E7EB;
-            color: #374151;
+        .mobile-links a:hover {
+            color: var(--primary);
         }
 
-        .dark .modal-close:hover {
-            background: #4B5563;
-            color: #E5E7EB;
-        }
-
-        .modal-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #FFF4ED 0%, #FFE6D5 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: modalPulse 2s ease-in-out infinite;
-        }
-
-        .dark .modal-icon {
-            background: linear-gradient(135deg, #4D1A0A 0%, #7C2D14 100%);
-        }
-
-        @keyframes modalPulse {
-            0%, 100% {
-                transform: scale(1);
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
-            50% {
-                transform: scale(1.05);
+
+            .mobile-btn {
+                display: block;
+            }
+
+            .navbar {
+                padding-right: 0.5rem;
             }
         }
 
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 0.75rem;
+        /* ---------------------------------------------------------
+           5. HERO SECTION
+           --------------------------------------------------------- */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+            text-align: center;
         }
 
-        .dark .modal-title {
-            color: #F9FAFB;
+        .hero h1 span {
+            color: var(--primary);
         }
 
-        .modal-description {
-            font-size: 1rem;
-            color: #6B7280;
-            margin-bottom: 1.5rem;
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.2rem;
             line-height: 1.6;
         }
 
-        .dark .modal-description {
-            color: #9CA3AF;
+        .hero-proof {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            opacity: 0.8;
         }
 
-        .modal-badge {
-            display: inline-flex;
+        .proof-item {
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            background: linear-gradient(135deg, #FF6B35 0%, #E84A11 100%);
-            color: white;
-            font-size: 0.875rem;
+            gap: 8px;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            color: var(--text-muted);
         }
 
-        .modal-btn {
-            width: 100%;
-            padding: 0.875rem 1.5rem;
-            border-radius: 0.75rem;
-            border: none;
-            background: linear-gradient(135deg, #FF6B35 0%, #E84A11 100%);
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
+        /* ---------------------------------------------------------
+           6. TRUST GRID
+           --------------------------------------------------------- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .modal-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
-        }
-
-        .modal-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 9999;
-            width: 48px;
-            height: 48px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top-btn {
+        /* ---------------------------------------------------------
+           7. HOW IT WORKS (Timeline Roadmap)
+           --------------------------------------------------------- */
+        .timeline-wrapper {
             position: relative;
-            width: 48px;
-            height: 48px;
+            margin-top: 3rem;
+        }
+
+        .timeline-track {
+            position: absolute;
+            top: 24px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+            display: block;
+        }
+
+        .timeline-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-item {
+            text-align: left;
+        }
+
+        .step-marker {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            background: #FF6B35;
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
-            transition: all 0.3s ease;
+            background: var(--bg-surface);
+            border: 2px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 0 0 8px var(--bg-body);
+            position: relative;
+            z-index: 2;
         }
 
-        .scroll-to-top-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
-        }
-
-        .scroll-to-top-btn:active {
-            transform: scale(0.95);
-        }
-
-        .scroll-progress-ring {
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            width: 54px;
-            height: 54px;
-            transform: rotate(-90deg);
-        }
-
-        .scroll-progress-ring circle {
-            fill: none;
-            stroke-width: 3;
-            stroke-linecap: round;
-        }
-
-        .scroll-progress-bg {
-            stroke: rgba(255, 255, 255, 0.2);
-        }
-
-        .scroll-progress-bar {
-            stroke: white;
-            stroke-dasharray: 150.8;
-            stroke-dashoffset: 150.8;
-            transition: stroke-dashoffset 0.1s ease;
-        }
-
-        .scroll-to-top-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .step-item:hover .step-marker {
+            border-color: var(--primary);
             color: white;
-            width: 20px;
-            height: 20px;
+            background-color: var(--primary);
+            transform: scale(1.15);
+            box-shadow: 0 0 0 8px var(--bg-body), 0 0 20px var(--primary-glow);
         }
 
-        @media (max-width: 640px) {
-            .scroll-to-top {
-                bottom: 1.5rem;
-                right: 1.5rem;
-                width: 44px;
-                height: 44px;
+        .step-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 800px) {
+            .timeline-track {
+                display: none;
             }
 
-            .scroll-to-top-btn {
-                width: 44px;
-                height: 44px;
+            .timeline-steps {
+                grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
-            .scroll-progress-ring {
-                width: 50px;
-                height: 50px;
+            .step-item {
+                display: flex;
+                gap: 1.5rem;
+                align-items: flex-start;
             }
-        }
 
-        /* Cookie Consent Banner Styles */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 9998;
-            transform: translateY(100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .cookie-banner.show {
-            transform: translateY(0);
-        }
-
-        .cookie-banner-inner {
-            background: white;
-            border-top: 1px solid #E5E7EB;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-            padding: 1.25rem 1.5rem;
-        }
-
-        .dark .cookie-banner-inner {
-            background: #1F2937;
-            border-top-color: #374151;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .cookie-text {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .cookie-icon {
-            font-size: 2.5rem;
-            animation: cookieBounce 2s ease-in-out infinite;
-        }
-
-        @keyframes cookieBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
+            .step-marker {
+                margin-bottom: 0;
+                flex-shrink: 0;
+                margin-top: -5px;
             }
         }
 
-        .cookie-message h4 {
+        /* ---------------------------------------------------------
+           8. FEATURES (Flat Layout)
+           --------------------------------------------------------- */
+        .flat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem 3rem;
+        }
+
+        .flat-item {
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .flat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .flat-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .flat-item p {
             font-size: 1rem;
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 0.25rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.6;
         }
 
-        .dark .cookie-message h4 {
-            color: #F9FAFB;
-        }
-
-        .cookie-message p {
-            font-size: 0.875rem;
-            color: #6B7280;
-            line-height: 1.5;
-        }
-
-        .dark .cookie-message p {
-            color: #9CA3AF;
-        }
-
-        .cookie-actions {
+        .flat-icon {
+            width: 48px;
+            height: 48px;
             display: flex;
-            gap: 0.75rem;
-            flex-shrink: 0;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            transition: color 0.3s;
         }
 
-        .cookie-btn {
-            padding: 0.625rem 1.25rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
+        .flat-item:hover .flat-icon {
+            color: var(--primary-hover);
+        }
+
+        .flat-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke-width: 1.5;
+        }
+
+        /* ---------------------------------------------------------
+           9. CATEGORIES
+           --------------------------------------------------------- */
+        .ecosystem-list {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
+        }
+
+        .eco-row {
+            display: grid;
+            grid-template-columns: 60px 200px 1fr;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
+            cursor: default;
+            gap: 2rem;
+        }
+
+        .eco-row:hover {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        [data-theme="dark"] .eco-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .eco-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: transform 0.2s;
+        }
+
+        .eco-row:hover .eco-icon {
+            transform: scale(1.1);
+            border-color: var(--primary);
+        }
+
+        .eco-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .eco-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .eco-row {
+                grid-template-columns: 60px 1fr;
+                gap: 1rem;
+                padding: 1.5rem 0;
+            }
+
+            .eco-desc {
+                grid-column: 1 / span 2;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           10. SOLUTIONS
+           --------------------------------------------------------- */
+        .sol-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sol-card.popular {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .check-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .check-icon {
+            color: var(--primary);
+            width: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ---------------------------------------------------------
+           13. JOIN (Dark Themed Box)
+           --------------------------------------------------------- */
+        .join-box {
+            background: linear-gradient(145deg, #1A1918, #000000);
+            color: #F4F4F5;
+            padding: 4rem 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--border);
+        }
+
+        .join-box h2 {
+            color: #F4F4F5;
+        }
+
+        .join-box p {
+            color: #A1A1AA;
+        }
+
+        .join-box.huntaa-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, #E88D67 100%);
             border: none;
         }
 
-        .cookie-btn-reject {
-            background: #F3F4F6;
-            color: #374151;
+        .join-box.huntaa-gradient h2, .join-box.huntaa-gradient p {
+            color: #FFFFFF;
         }
 
-        .dark .cookie-btn-reject {
-            background: #374151;
-            color: #D1D5DB;
+        .join-box.huntaa-gradient .btn {
+            background: #FFFFFF;
+            color: var(--primary);
         }
 
-        .cookie-btn-reject:hover {
-            background: #E5E7EB;
+        .join-box.huntaa-gradient .btn:hover {
+            background: #FFF9F5;
         }
 
-        .dark .cookie-btn-reject:hover {
-            background: #4B5563;
+        /* ---------------------------------------------------------
+           14. FOOTER
+           --------------------------------------------------------- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
         }
 
-        .cookie-btn-accept {
-            background: linear-gradient(135deg, #FF6B35 0%, #E84A11 100%);
-            color: white;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
-        .cookie-btn-accept:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+        .footer-col h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            letter-spacing: 0.05em;
         }
 
-        @media (max-width: 640px) {
-            .cookie-banner-inner {
-                padding: 1rem;
-            }
+        .footer-col a {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
 
-            .cookie-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
+        .footer-col a:hover {
+            color: var(--primary);
+        }
 
-            .cookie-text {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
 
-            .cookie-icon {
-                font-size: 2rem;
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
+        }
 
-            .cookie-actions {
-                width: 100%;
-                flex-direction: column-reverse;
-            }
+        /* ---------------------------------------------------------
+           15. SCROLL TOP
+           --------------------------------------------------------- */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--bg-surface);
+            border-radius: 50%;
+            box-shadow: var(--shadow-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s;
+            z-index: 900;
+        }
 
-            .cookie-btn {
-                width: 100%;
-                padding: 0.75rem 1.5rem;
-            }
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .scroll-loader {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 2;
+            stroke-dasharray: 145;
+            stroke-dashoffset: 145;
+            transform: rotate(-90deg);
+            border-radius: 50%;
+            transition: stroke-dashoffset 0.1s;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
+<body>
 
-<!-- Mobile Menu Overlay -->
-<div class="mobile-menu-overlay" id="mobile-overlay" onclick="closeMobileMenu()"></div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- Mobile Menu Panel -->
-<div class="mobile-menu-panel" id="mobile-panel">
-    <div class="p-6">
-        <!-- Close button and logo -->
-        <div class="flex items-center justify-between mb-8">
-            <a href="/" class="flex items-center space-x-2">
-                <span class="text-xl font-bold gradient-text">🎯 Huntaa</span>
-            </a>
-            <button onclick="closeMobileMenu()" class="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800"
-                    aria-label="Close menu">
-                <svg class="h-6 w-6 text-neutral-600 dark:text-neutral-300" fill="none" stroke="currentColor"
-                     viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
+<nav class="navbar">
+    <a href="#" class="logo-text">
+        Huntaa
+    </a>
 
-        <!-- Navigation Links -->
-        <nav class="space-y-1 mb-8">
-            <a href="#how-it-works" onclick="closeMobileMenu()"
-               class="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-colors">
-                <svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <span class="font-medium">How It Works</span>
-            </a>
-            <a href="#categories" onclick="closeMobileMenu()"
-               class="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-colors">
-                <svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
-                </svg>
-                <span class="font-medium">Categories</span>
-            </a>
-            <a href="#features" onclick="closeMobileMenu()"
-               class="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-colors">
-                <svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                </svg>
-                <span class="font-medium">Features</span>
-            </a>
-        </nav>
-
-        <!-- Divider -->
-        <div class="border-t border-neutral-200 dark:border-neutral-700 my-6"></div>
-
-        <!-- Theme Toggle -->
-        <div class="flex items-center justify-between px-4 py-3 mb-4">
-            <span class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Dark Mode</span>
-            <button onclick="toggleDarkMode()"
-                    class="relative w-12 h-6 rounded-full bg-neutral-200 dark:bg-primary-500 transition-colors">
-                <div
-                        class="absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow transform transition-transform dark:translate-x-6"></div>
-            </button>
-        </div>
-
-        <!-- CTA Button -->
-        <a href="/search" onclick="closeMobileMenu()"
-           class="btn btn-primary w-full justify-center text-base py-3 h-auto">
-            Search for Deals
-            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-        </a>
+    <div class="nav-links">
+        <a href="#how">How it Works</a>
+        <a href="#categories">Categories</a>
+        <a href="#features">Features</a>
+        <a href="#trust">Trust</a>
     </div>
-</div>
 
-<!-- Navigation -->
-<nav
-        class="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white/80 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-950/80">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center">
-                <a href="/" class="flex items-center space-x-2">
-                    <span class="text-2xl font-bold gradient-text">🎯 Huntaa</span>
-                </a>
-            </div>
-
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#how-it-works"
-                   class="text-sm font-medium text-neutral-700 hover:text-primary-500 transition-colors dark:text-neutral-300">How
-                    It Works</a>
-                <a href="#categories"
-                   class="text-sm font-medium text-neutral-700 hover:text-primary-500 transition-colors dark:text-neutral-300">Categories</a>
-                <a href="#features"
-                   class="text-sm font-medium text-neutral-700 hover:text-primary-500 transition-colors dark:text-neutral-300">Features</a>
-            </div>
-
-            <!-- Desktop Actions -->
-            <div class="hidden md:flex items-center space-x-4">
-                <!-- Dark Mode Toggle -->
-                <button
-                        type="button"
-                        onclick="toggleDarkMode()"
-                        class="rounded-lg p-2 text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
-                        aria-label="Toggle theme"
-                >
-                    <!-- Sun icon (shown in dark mode) -->
-                    <svg class="h-5 w-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
-                    <!-- Moon icon (shown in light mode) -->
-                    <svg class="h-5 w-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                    </svg>
-                </button>
-
-                <a href="https://huntaa.app" target="_blank" class="btn btn-primary">Search for Deals</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button
-                    type="button"
-                    onclick="toggleMobileMenu()"
-                    class="md:hidden rounded-lg p-2 text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
-                    aria-label="Toggle menu"
-            >
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-        </div>
+    <div class="nav-actions">
+        <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">
+            <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+        </button>
+        <a href="https://huntaa.app" target="_blank" class="btn btn-primary"
+           style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Search Deals</a>
+        <button class="mobile-btn" id="menuBtn">
+            <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+        </button>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section
-        class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950">
-    <!-- Background decoration -->
-    <div class="absolute inset-0 -z-10">
-        <div class="absolute left-1/4 top-20 h-72 w-72 rounded-full bg-primary-200/30 blur-3xl"></div>
-        <div class="absolute right-1/4 top-40 h-96 w-96 rounded-full bg-secondary-200/30 blur-3xl"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <div class="drawer-header">
+        <span class="logo-text">Huntaa</span>
+        <button class="close-btn" onclick="closeMenu()">
+            <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+        </button>
+    </div>
+    <div class="mobile-links">
+        <a href="#how" onclick="closeMenu()">How it Works</a>
+        <a href="#categories" onclick="closeMenu()">Categories</a>
+        <a href="#features" onclick="closeMenu()">Features</a>
+        <a href="#trust" onclick="closeMenu()">Trust</a>
+    </div>
+    <a href="https://huntaa.app" target="_blank" onclick="closeMenu()" class="btn btn-primary"
+       style="width:100%; margin-top: auto;">Start Hunting</a>
+</div>
+
+<section class="hero container fade-in">
+    <!-- Updated Eyebrow Link -->
+    <div style="margin-bottom: 2rem;">
+        <a href="https://huntaa.app" target="_blank" class="eyebrow"
+           style="background: var(--bg-surface); color: var(--primary); border: 1px solid var(--border);">
+            Find Valentines Day Deals <span style="margin-left: 5px;">&rarr;</span>
+        </a>
     </div>
 
-    <div class="container mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-        <div class="mx-auto max-w-4xl text-center">
-            <!-- Black Friday Badge -->
-            <div class="mb-8 animate-fade-in-up">
-                <div
-                        class="inline-flex items-center rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 px-4 py-2 text-sm font-semibold text-white shadow-lg">
-                    <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                    Boxing Day Sales Up Next!
-                </div>
+    <h1>Find the <span class="text-highlight">Best Deals</span><br>with AI-Powered Search.</h1>
+    <p>Find verified discount codes instantly for events, shopping, travel, and subscriptions. Huntaa searches hundreds
+        of sources automatically.</p>
+
+    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+        <a href="https://huntaa.app" target="_blank" class="btn btn-primary">Start Hunting Deals</a>
+    </div>
+
+    <div class="hero-proof">
+        <div class="proof-item"><i data-lucide="check-circle" style="width: 16px; height: 16px;"></i> Verified Deals
+        </div>
+        <div class="proof-item"><i data-lucide="users" style="width: 16px; height: 16px;"></i> Saved by Community</div>
+        <div class="proof-item"><i data-lucide="zap" style="width: 16px; height: 16px;"></i> AI-Powered Search</div>
+    </div>
+</section>
+
+<section id="trust" class="section">
+    <div class="container fade-in">
+        <div class="section-header">
+            <span class="eyebrow">The Huntaa Difference</span>
+            <h2>Why thousands trust Huntaa</h2>
+            <p>Stop wasting time with fake codes. We use AI to verify discounts in real-time so you never pay full price
+                again.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <div class="icon-box"><i data-lucide="shield-check"></i></div>
+                <h3>Always Verified</h3>
+                <p>Every code tested before display. We check expiration dates, terms, and success rates instantly.</p>
             </div>
-
-            <!-- Countdown Timer -->
-            <!--<div class="mb-8 animate-fade-in-up animate-delay-1 relative">
-                &lt;!&ndash; Confetti Container &ndash;&gt;
-                <div id="confetti-container" class="absolute inset-0 pointer-events-none overflow-hidden"
-                     style="z-index: 10;"></div>
-
-                <div class="flex justify-center items-center gap-2 sm:gap-3">
-                    <div
-                            class="flex flex-col items-center rounded-lg bg-white px-3 py-2 sm:px-4 sm:py-3 shadow-lg dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800">
-                        <div class="text-xl sm:text-2xl font-bold text-primary-500" id="days">00</div>
-                        <div class="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">
-                            Days
-                        </div>
-                    </div>
-                    <span class="text-xl font-bold text-primary-500/50 animate-pulse">:</span>
-                    <div
-                            class="flex flex-col items-center rounded-lg bg-white px-3 py-2 sm:px-4 sm:py-3 shadow-lg dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800">
-                        <div class="text-xl sm:text-2xl font-bold text-primary-500" id="hours">00</div>
-                        <div class="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">
-                            Hours
-                        </div>
-                    </div>
-                    <span class="text-xl font-bold text-primary-500/50 animate-pulse">:</span>
-                    <div
-                            class="flex flex-col items-center rounded-lg bg-white px-3 py-2 sm:px-4 sm:py-3 shadow-lg dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800">
-                        <div class="text-xl sm:text-2xl font-bold text-primary-500" id="minutes">00</div>
-                        <div class="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">
-                            Mins
-                        </div>
-                    </div>
-                    <span class="text-xl font-bold text-primary-500/50 animate-pulse">:</span>
-                    <div
-                            class="flex flex-col items-center rounded-lg bg-white px-3 py-2 sm:px-4 sm:py-3 shadow-lg dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800">
-                        <div class="text-xl sm:text-2xl font-bold text-primary-500" id="seconds">00</div>
-                        <div class="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">
-                            Secs
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-
-            <!-- Hero Title -->
-            <h1
-                    class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl md:text-6xl animate-fade-in-up animate-delay-2 dark:text-white">
-                Find the <span class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Best Deals</span>
-                with AI-Powered Search
-            </h1>
-
-            <!-- Hero Description -->
-            <p class="mb-10 text-lg text-neutral-600 sm:text-xl animate-fade-in-up animate-delay-3 dark:text-neutral-300">
-                Find verified discount codes instantly for events, shopping, travel, and subscriptions. Huntaa searches
-                hundreds
-                of sources automatically.
-            </p>
-
-            <!-- Trust Indicators -->
-            <div
-                    class="mb-10 flex flex-wrap justify-center gap-6 text-sm text-neutral-600 animate-fade-in-up animate-delay-4 dark:text-neutral-400">
-                <div class="flex items-center">
-                    <svg class="mr-2 h-5 w-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                    <span><strong class="text-neutral-900 dark:text-white">Verified</strong> Deals</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="mr-2 h-5 w-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
-                    <span><strong class="text-neutral-900 dark:text-white">Saved</strong> by Community</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="mr-2 h-5 w-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                    <span><strong class="text-neutral-900 dark:text-white">AI-Powered</strong> Search</span>
-                </div>
+            <div class="card">
+                <div class="icon-box"><i data-lucide="clock"></i></div>
+                <h3>Real-Time Updates</h3>
+                <p>Fresh codes updated every hour. Don't miss out on flash sales or limited-time offers.</p>
             </div>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-col gap-4 sm:flex-row sm:justify-center animate-fade-in-up animate-delay-4">
-                <a href="https://huntaa.app/deals" target="_blank" class="btn btn-xl w-full sm:w-auto" style="background-color: #FF6B35; color: white;">
-                    Start Hunting Deals
-                </a>
-                <a href="https://huntaa.app" target="_blank" class="btn btn-outline btn-xl w-full sm:w-auto">
-                    Search for Deals
-                </a>
-            </div>
-
-            <!-- Hero Interactive Demo (replaces gradient box) -->
-            <div class="mt-16 animate-fade-in-up animate-delay-4">
-                <div
-                        class="overflow-hidden rounded-xl border border-neutral-200 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 p-1 shadow-2xl dark:border-neutral-700">
-                    <div class="rounded-lg bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 p-6">
-
-                        <!-- Demo Header -->
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="flex items-center gap-2">
-                                <div class="h-3 w-3 rounded-full bg-red-500"></div>
-                                <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
-                                <div class="h-3 w-3 rounded-full bg-green-500"></div>
-                            </div>
-                            <span class="text-xs font-medium text-neutral-400">See It In Action</span>
-                            <div class="flex items-center gap-1.5">
-                                <div class="status-pulse h-2 w-2 rounded-full bg-success-500"></div>
-                                <span class="text-xs text-success-400">Live</span>
-                            </div>
-                        </div>
-
-                        <!-- Scenario Chips -->
-                        <div class="flex flex-wrap justify-center gap-2 mb-5">
-                            <div class="hero-demo-chip active" data-scenario="concert">
-                                <span>🎫</span>
-                                <span>Concert</span>
-                            </div>
-                            <div class="hero-demo-chip" data-scenario="flight">
-                                <span>✈️</span>
-                                <span>Flight</span>
-                            </div>
-                            <div class="hero-demo-chip" data-scenario="streaming">
-                                <span>📺</span>
-                                <span>Streaming</span>
-                            </div>
-                        </div>
-
-                        <!-- Search Input Display -->
-                        <div class="relative mb-5">
-                            <div class="flex items-center gap-3 rounded-lg bg-neutral-800/80 border border-neutral-700 px-4 py-3">
-                                <svg class="h-5 w-5 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor"
-                                     viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-                                <span class="text-white text-sm sm:text-base font-medium" id="hero-demo-query"></span>
-                            </div>
-                        </div>
-
-                        <!-- Status Area -->
-                        <div id="hero-demo-status" class="mb-4 min-h-[28px]"></div>
-
-                        <!-- Results Area -->
-                        <div id="hero-demo-results" class="space-y-3 min-h-[140px]"></div>
-
-                    </div>
-                </div>
-                <p class="mt-4 text-xs text-neutral-500 dark:text-neutral-500">Click the categories above to see Huntaa
-                    find
-                    deals</p>
+            <div class="card">
+                <div class="icon-box"><i data-lucide="sparkles"></i></div>
+                <h3>AI-Powered</h3>
+                <p>Natural language search understands exactly what you want. "Find me cheap flights to NYC" just
+                    works.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Save On Everything Section -->
-<section id="categories" class="section bg-neutral-50 dark:bg-neutral-900">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-            <h2 class="mb-4 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl dark:text-white">
-                Save On Everything
-            </h2>
-            <p class="text-xl text-neutral-600 dark:text-neutral-300">
-                From concerts to subscriptions, shopping to travel
-            </p>
+<section id="categories" class="section" style="background: var(--bg-surface);">
+    <div class="container fade-in">
+        <div class="section-header">
+            <span class="eyebrow">Categories</span>
+            <h2>Save on Everything</h2>
+            <p>From concerts to subscriptions, shopping to travel. If there's a deal, we'll find it.</p>
         </div>
 
-        <!-- Category Cards Grid -->
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <!-- Events & Tickets -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="mb-6 text-5xl">🎫</div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Events & Tickets</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Concerts, sports, theater,
-                    festivals</p>
+        <div class="ecosystem-list">
+            <div class="eco-row">
+                <div class="eco-icon"><i data-lucide="ticket"></i></div>
+                <div class="eco-title">Events & Tickets</div>
+                <p class="eco-desc">Concerts, sports, theater, and festivals. Never pay full price for
+                    entertainment.</p>
             </div>
-
-            <!-- Shopping -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="mb-6 text-5xl">🛍️</div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Shopping</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Fashion, electronics, home goods</p>
+            <div class="eco-row">
+                <div class="eco-icon"><i data-lucide="shopping-bag"></i></div>
+                <div class="eco-title">Shopping</div>
+                <p class="eco-desc">Fashion, electronics, home goods. Verified codes for ASOS, Nike, Amazon & more.</p>
             </div>
-
-            <!-- Travel -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="mb-6 text-5xl">✈️</div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Travel</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Flights, hotels, activities</p>
+            <div class="eco-row">
+                <div class="eco-icon"><i data-lucide="plane"></i></div>
+                <div class="eco-title">Travel</div>
+                <p class="eco-desc">Flights, hotels, activities. Smart savings for your next getaway.</p>
             </div>
-
-            <!-- Subscriptions -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="mb-6 text-5xl">📺</div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Subscriptions</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Streaming, software, services</p>
+            <div class="eco-row">
+                <div class="eco-icon"><i data-lucide="tv"></i></div>
+                <div class="eco-title">Subscriptions</div>
+                <p class="eco-desc">Streaming, software, services. Discounts on Netflix, Spotify, Adobe, and more.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- How It Works Section -->
-<section id="how-it-works" class="section bg-neutral-50 dark:bg-neutral-900">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-            <h2 class="mb-4 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl dark:text-white">
-                How Huntaa Works
-            </h2>
-            <p class="text-xl text-neutral-600 dark:text-neutral-300">
-                Finding and saving money on deals has never been easier. Here's how we make it happen.
-            </p>
+<section id="how" class="section">
+    <div class="container fade-in">
+        <div class="section-header">
+            <span class="eyebrow">The Process</span>
+            <h2>How Huntaa Works</h2>
+            <p>Finding and saving money on deals has never been easier. Here's how we make it happen.</p>
         </div>
 
-        <!-- Steps Grid -->
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <!-- Step 1 -->
-            <div
-                    class="relative h-full overflow-hidden rounded-lg border-2 border-neutral-100 bg-white p-6 shadow-card transition-all hover:border-primary-200 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="absolute right-4 top-4 text-6xl font-bold text-neutral-100 dark:text-neutral-900">1</div>
-                <div class="relative z-10 mb-4">
-                    <div
-                            class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg">
-                        <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
+        <div class="timeline-wrapper">
+            <div class="timeline-track"></div>
+            <div class="timeline-steps">
+                <div class="step-item">
+                    <div class="step-marker">01</div>
+                    <div class="step-content">
+                        <h4>You Search</h4>
+                        <p>Use natural language to describe what you want. "Cheap noise cancelling headphones".</p>
                     </div>
                 </div>
-                <h3 class="relative z-10 mb-3 text-xl font-bold text-neutral-900 dark:text-white">Search for Deals</h3>
-                <p class="relative z-10 text-neutral-600 dark:text-neutral-400">Use natural language to describe what
-                    you want.
-                    Our AI understands and finds the best verified deals across thousands of retailers.</p>
-            </div>
-
-            <!-- Step 2 -->
-            <div
-                    class="relative h-full overflow-hidden rounded-lg border-2 border-neutral-100 bg-white p-6 shadow-card transition-all hover:border-primary-200 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="absolute right-4 top-4 text-6xl font-bold text-neutral-100 dark:text-neutral-900">2</div>
-                <div class="relative z-10 mb-4">
-                    <div
-                            class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-success-500 to-success-600 shadow-lg">
-                        <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+                <div class="step-item">
+                    <div class="step-marker">02</div>
+                    <div class="step-content">
+                        <h4>AI Scans</h4>
+                        <p>Our AI scans hundreds of sources automatically to find relevant deals.</p>
                     </div>
                 </div>
-                <h3 class="relative z-10 mb-3 text-xl font-bold text-neutral-900 dark:text-white">AI Verifies
-                    Everything</h3>
-                <p class="relative z-10 text-neutral-600 dark:text-neutral-400">Every deal is automatically tested and
-                    verified.
-                    We check codes, validate discounts, and show you real-time confidence scores.</p>
-            </div>
-
-            <!-- Step 3 -->
-            <div
-                    class="relative h-full overflow-hidden rounded-lg border-2 border-neutral-100 bg-white p-6 shadow-card transition-all hover:border-primary-200 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="absolute right-4 top-4 text-6xl font-bold text-neutral-100 dark:text-neutral-900">3</div>
-                <div class="relative z-10 mb-4">
-                    <div
-                            class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-warning-500 to-warning-600 shadow-lg">
-                        <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                        </svg>
+                <div class="step-item">
+                    <div class="step-marker">03</div>
+                    <div class="step-content">
+                        <h4>We Verify</h4>
+                        <p>Every deal is automatically tested and verified for validity.</p>
                     </div>
                 </div>
-                <h3 class="relative z-10 mb-3 text-xl font-bold text-neutral-900 dark:text-white">Get Instant
-                    Alerts</h3>
-                <p class="relative z-10 text-neutral-600 dark:text-neutral-400">Track prices on products you love. Get
-                    notified
-                    immediately when prices drop or better deals become available.</p>
-            </div>
-
-            <!-- Step 4 -->
-            <div
-                    class="relative h-full overflow-hidden rounded-lg border-2 border-neutral-100 bg-white p-6 shadow-card transition-all hover:border-primary-200 hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div class="absolute right-4 top-4 text-6xl font-bold text-neutral-100 dark:text-neutral-900">4</div>
-                <div class="relative z-10 mb-4">
-                    <div
-                            class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-600 shadow-lg">
-                        <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
+                <div class="step-item">
+                    <div class="step-marker">04</div>
+                    <div class="step-content">
+                        <h4>You Save</h4>
+                        <p>Copy verified codes, use direct links, and save money instantly.</p>
                     </div>
                 </div>
-                <h3 class="relative z-10 mb-3 text-xl font-bold text-neutral-900 dark:text-white">Save Money</h3>
-                <p class="relative z-10 text-neutral-600 dark:text-neutral-400">Copy verified codes, use direct links,
-                    and save
-                    hundreds on every purchase. Join thousands saving money daily.</p>
-            </div>
-        </div>
-
-        <!-- Additional Info -->
-        <div class="mt-16 text-center">
-            <p class="text-lg text-neutral-600 dark:text-neutral-400">
-                Join 10,000+ smart shoppers who never pay full price
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Why Thousands Trust Huntaa Section -->
-<section class="section bg-white dark:bg-neutral-950">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-            <h2 class="mb-4 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl dark:text-white">
-                Why Thousands Trust Huntaa
-            </h2>
-            <p class="text-xl text-neutral-600 dark:text-neutral-300">
-                The Huntaa difference in deal hunting
-            </p>
-        </div>
-
-        <!-- Trust Cards Grid (6 cards) -->
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <!-- Always Verified -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-success-500 to-success-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Always Verified</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Every code tested before display</p>
-            </div>
-
-            <!-- Real-Time Updates -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Real-Time Updates</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Fresh codes updated every hour</p>
-            </div>
-
-            <!-- AI-Powered Search -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">AI-Powered Search</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Understands natural language</p>
-            </div>
-
-            <!-- Multi-Source Search -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Multi-Source Search</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Scans hundreds of sources
-                    automatically</p>
-            </div>
-
-            <!-- Privacy First -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Privacy First</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">No tracking, no accounts, searches
-                    stay
-                    private</p>
-            </div>
-
-            <!-- Fast Results -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-warning-500 to-warning-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Lightning Fast</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Get results in seconds, not
-                    minutes</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Features Section -->
-<section id="features" class="section bg-neutral-50 dark:bg-neutral-900">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="mx-auto mb-16 max-w-3xl text-center">
-            <h2 class="mb-4 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl dark:text-white">
-                Everything You Need
-            </h2>
-            <p class="text-xl text-neutral-600 dark:text-neutral-300">
-                Powerful features designed to save you time and money
-            </p>
+<section id="features" class="section" style="background: var(--bg-surface);">
+    <div class="container fade-in">
+        <div class="section-header">
+            <span class="eyebrow">Features</span>
+            <h2>Everything you need</h2>
+            <p>Powerful features designed to save you time and money.</p>
         </div>
 
-        <!-- Features Grid -->
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <!-- Feature 1: AI-Powered Search -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">AI-Powered Search</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Natural language search understands
-                    exactly
-                    what you're looking for. Just describe what you want and we'll find the best deals instantly.</p>
+        <div class="flat-grid">
+            <div class="flat-item">
+                <div class="flat-icon"><i data-lucide="search"></i></div>
+                <h3>Natural Language Search</h3>
+                <p>Just describe what you want and we'll find the best deals instantly. No complex filters needed.</p>
             </div>
-
-            <!-- Feature 2: Instant Verification -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Instant Verification</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Every coupon code is automatically
-                    tested
-                    before we show it to you. No more expired or fake codes wasting your time.</p>
+            <div class="flat-item">
+                <div class="flat-icon"><i data-lucide="check-circle-2"></i></div>
+                <h3>Instant Verification</h3>
+                <p>No more expired or fake codes. We show you exactly how reliable each offer is.</p>
             </div>
-
-            <!-- Feature 3: Price History Tracking -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Price History Tracking</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">See 30-day price trends and get alerts
-                    when
-                    prices drop. Know if you're getting a real deal or artificial discount.</p>
+            <!-- Updated Features based on Huntaa App -->
+            <div class="flat-item">
+                <div class="flat-icon"><i data-lucide="crosshair"></i></div>
+                <h3>Snipe Mode</h3>
+                <p>Hunting for a specific price? Snipe Mode scans lightning deals in real-time to find the exact
+                    discount you need.</p>
             </div>
-
-            <!-- Feature 4: Personalized Alerts -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Personalized Alerts</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Set up custom alerts for specific
-                    products,
-                    categories, or price points. Never miss a deal that matters to you.</p>
+            <div class="flat-item">
+                <div class="flat-icon"><i data-lucide="heart"></i></div>
+                <h3>Smart Wishlist</h3>
+                <p>Track your desired items and manage your collection of saved deals in one place.</p>
             </div>
-
-            <!-- Feature 5: Community Validated -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Community Validated</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Real users verify deals in real-time.
-                    See
-                    success rates and comments from people who actually used the codes.</p>
+            <div class="flat-item">
+                <div class="flat-icon"><i data-lucide="camera"></i></div>
+                <h3>Visual Search</h3>
+                <p>See a product you like? Upload a photo and let our AI find the best deal for it instantly.</p>
             </div>
-
-            <!-- Feature 6: Trust & Transparency -->
-            <div
-                    class="group h-full rounded-lg border-2 border-neutral-100 bg-white p-8 shadow-card transition-all hover:border-primary-200 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-800">
-                <div
-                        class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-transform group-hover:scale-110">
-                    <svg class="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-3 text-xl font-bold text-neutral-900 dark:text-white">Trust & Transparency</h3>
-                <p class="text-neutral-600 leading-relaxed dark:text-neutral-400">Clear confidence scores on every deal.
-                    We show
-                    you exactly how reliable each offer is with honest verification data.</p>
+            <div class="flat-item">
+                <div class="flat-icon"><i data-lucide="lock"></i></div>
+                <h3>Privacy First</h3>
+                <p>No tracking, no accounts needed for basic search. Your shopping habits stay private.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Social Proof / Testimonials Section -->
-<section class="section bg-white dark:bg-neutral-950">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Feature Highlights -->
-        <div class="mb-20 grid grid-cols-2 gap-8 lg:grid-cols-4">
-            <div class="text-center">
-                <div class="mb-3 text-5xl sm:text-6xl">🎯</div>
-                <div class="mb-1 text-lg font-bold text-neutral-900 dark:text-white">AI-Powered Search</div>
-                <div class="text-sm text-neutral-600 dark:text-neutral-400">Find deals instantly</div>
-            </div>
-            <div class="text-center">
-                <div class="mb-3 text-5xl sm:text-6xl">💰</div>
-                <div class="mb-1 text-lg font-bold text-neutral-900 dark:text-white">Real Savings</div>
-                <div class="text-sm text-neutral-600 dark:text-neutral-400">Track every dollar saved</div>
-            </div>
-            <div class="text-center">
-                <div class="mb-3 text-5xl sm:text-6xl">✓</div>
-                <div class="mb-1 text-lg font-bold text-neutral-900 dark:text-white">Verified Deals</div>
-                <div class="text-sm text-neutral-600 dark:text-neutral-400">Community-tested offers</div>
-            </div>
-            <div class="text-center">
-                <div class="mb-3 text-5xl sm:text-6xl">🚀</div>
-                <div class="mb-1 text-lg font-bold text-neutral-900 dark:text-white">Lightning Fast</div>
-                <div class="text-sm text-neutral-600 dark:text-neutral-400">Results in seconds</div>
-            </div>
+<section id="solutions" class="section">
+    <div class="container fade-in">
+        <div class="section-header">
+            <span class="eyebrow">Who is it for?</span>
+            <h2>Built for Smart Shoppers</h2>
+            <p>Whether you're a student, a traveler, or just love a bargain.</p>
         </div>
 
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="section relative overflow-hidden bg-gradient-to-r from-primary-500 to-secondary-500">
-    <!-- Background decoration -->
-    <div class="absolute inset-0 -z-10">
-        <div class="absolute -left-20 top-0 h-96 w-96 rounded-full bg-white/10 blur-3xl"></div>
-        <div class="absolute -right-20 bottom-0 h-96 w-96 rounded-full bg-white/10 blur-3xl"></div>
-    </div>
-
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-3xl text-center text-white">
-            <h2 class="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Ready to Start Saving Money?
-            </h2>
-            <p class="mb-8 text-lg text-white/90 sm:text-xl">
-                Join thousands of smart shoppers who never pay full price. Start hunting deals today—it's completely
-                free!
-            </p>
-            <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <a href="https://huntaa.app" target="_blank"
-                   class="inline-flex items-center justify-center rounded-lg border-2 border-white bg-white px-8 text-lg font-medium text-primary-600 transition-all duration-200 hover:bg-white/90"
-                   style="height: 3.5rem;">
-                    Visit Huntaa
-                    <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-                <a href="https://huntaa.app/deals" target="_blank"
-                   class="inline-flex items-center justify-center rounded-lg border-2 border-white bg-transparent px-8 text-lg font-medium text-white transition-all duration-200 hover:bg-white/10"
-                   style="height: 3.5rem;">
-                    Browse Deals
-                </a>
-            </div>
-            <p class="mt-6 text-sm text-white/80">
-                No credit card required • Find deals • Premium features available
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="border-t border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-    <div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-5">
-            <!-- Brand -->
-            <div class="lg:col-span-1">
-                <a href="/" class="flex items-center space-x-2">
-                    <span class="text-2xl font-bold gradient-text">🎯 Huntaa</span>
-                </a>
-                <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
-                    AI-powered deal intelligence platform helping you save money on every purchase.
-                </p>
-                <div class="mt-6 flex space-x-4">
-                    <!-- Twitter -->
-                    <a href="https://twitter.com/huntaa" target="_blank" rel="noopener noreferrer"
-                       class="text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400"
-                       aria-label="Twitter">
-                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                        </svg>
-                    </a>
-                    <!-- GitHub -->
-                    <a href="https://github.com/huntaa" target="_blank" rel="noopener noreferrer"
-                       class="text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400"
-                       aria-label="GitHub">
-                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com/company/huntaa" target="_blank" rel="noopener noreferrer"
-                       class="text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400"
-                       aria-label="LinkedIn">
-                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-                        </svg>
-                    </a>
-                    <!-- Email -->
-                    <a href="/cdn-cgi/l/email-protection#9ef6fbf2f2f1def6ebf0eaffffb0fdf1f3"
-                       class="text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400"
-                       aria-label="Email">
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product -->
-            <div>
-                <h3 class="mb-4 text-sm font-semibold uppercase text-neutral-900 dark:text-white">
-                    Product
-                </h3>
-                <ul class="space-y-3">
-                    <li><a href="#features"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Features</a>
-                    </li>
-                    <li><a href="/pricing"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Pricing</a>
-                    </li>
-                    <li><a href="#how-it-works"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">How
-                        It Works</a></li>
-                    <li><a href="/faq"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">FAQ</a>
-                    </li>
+        <div class="grid-3">
+            <div class="sol-card">
+                <h3>For Students</h3>
+                <p>Find student-specific discounts for tech, fashion, and food.</p>
+                <ul class="check-list" style="margin-top:1.5rem;">
+                    <li><i data-lucide="check" class="check-icon"></i> Budget Friendly</li>
+                    <li><i data-lucide="check" class="check-icon"></i> Tech Discounts</li>
+                    <li><i data-lucide="check" class="check-icon"></i> Fashion Deals</li>
                 </ul>
             </div>
-
-            <!-- Company -->
-            <div>
-                <h3 class="mb-4 text-sm font-semibold uppercase text-neutral-900 dark:text-white">
-                    Company
-                </h3>
-                <ul class="space-y-3">
-                    <li><a href="/about"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">About</a>
-                    </li>
-                    <li><a href="/blog"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Blog</a>
-                    </li>
-                    <li><a href="/careers"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Careers</a>
-                    </li>
-                    <li><a href="/contact"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Contact</a>
-                    </li>
+            <div class="sol-card popular">
+                <h3>For Travelers</h3>
+                <p>Save on your next adventure with codes for flights, hotels, and experiences.</p>
+                <ul class="check-list" style="margin-top:1.5rem;">
+                    <li><i data-lucide="check" class="check-icon"></i> Flight Sniper</li>
+                    <li><i data-lucide="check" class="check-icon"></i> Hotel Discounts</li>
+                    <li><i data-lucide="check" class="check-icon"></i> Global Search</li>
                 </ul>
             </div>
-
-            <!-- Legal -->
-            <div>
-                <h3 class="mb-4 text-sm font-semibold uppercase text-neutral-900 dark:text-white">
-                    Legal
-                </h3>
-                <ul class="space-y-3">
-                    <li><a href="/privacy"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Privacy
-                        Policy</a></li>
-                    <li><a href="/terms"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Terms
-                        of Service</a></li>
-                    <li><a href="/cookies"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Cookie
-                        Policy</a></li>
-                    <li><a href="/affiliate"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Affiliate
-                        Disclosure</a></li>
-                </ul>
-            </div>
-
-            <!-- Community -->
-            <div>
-                <h3 class="mb-4 text-sm font-semibold uppercase text-neutral-900 dark:text-white">
-                    Community
-                </h3>
-                <ul class="space-y-3">
-                    <li><a href="/community"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Community</a>
-                    </li>
-                    <li><a href="/community#leaderboard"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Leaderboard</a>
-                    </li>
-                    <li><a href="/deals/submit"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Submit
-                        Deal</a></li>
-                    <li><a href="/guidelines"
-                           class="text-sm text-neutral-600 transition-colors hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400">Guidelines</a>
-                    </li>
+            <div class="sol-card">
+                <h3>For Techies</h3>
+                <p>Find the best electronics deals using advanced AI models.</p>
+                <ul class="check-list" style="margin-top:1.5rem;">
+                    <li><i data-lucide="check" class="check-icon"></i> Multi-Model AI</li>
+                    <li><i data-lucide="check" class="check-icon"></i> Snipe Mode</li>
+                    <li><i data-lucide="check" class="check-icon"></i> Spec Analysis</li>
                 </ul>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="mt-12 border-t border-neutral-200 pt-8 dark:border-neutral-800">
-            <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                    © 2025 Huntaa. All rights reserved.
-                </p>
-                <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                        </svg>
-                        <span>SSL Secure</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <span>Verified Codes</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
-                        <span>Privacy First</span>
-                    </div>
-                </div>
+<section id="join" class="section">
+    <div class="container fade-in">
+        <div class="join-box huntaa-gradient">
+            <h2>Ready to Start Saving Money?</h2>
+            <p>Join thousands of smart shoppers who never pay full price. Start hunting deals today—it's completely
+                free!</p>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="https://huntaa.app" target="_blank" class="btn btn-primary">Visit Huntaa App</a>
             </div>
         </div>
+    </div>
+</section>
+
+<footer class="container">
+    <div class="footer-grid">
+        <div class="footer-col" style="flex:2">
+            <div class="logo-text" style="margin-bottom:1rem;">
+                Huntaa
+            </div>
+            <p>AI-powered deal intelligence platform helping you save money on every purchase.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#how">How it Works</a>
+            <a href="#features">Features</a>
+            <a href="#categories">Categories</a>
+        </div>
+        <div class="footer-col">
+            <h4>Socials</h4>
+            <a href="https://www.instagram.com/huntaa.ai/" target="_blank">Instagram</a>
+        </div>
+    </div>
+
+    <div class="trust-badges">
+        <span>&copy; 2025 Huntaa. All rights reserved.</span>
+        <span style="display:flex; gap:5px; align-items:center;">
+            <i data-lucide="lock" style="width: 14px; height: 14px;"></i> SSL Secure
+        </span>
+        <span>Verified Codes</span>
+        <span>Privacy First</span>
     </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-banner-inner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <span class="cookie-icon">🍪</span>
-                <div class="cookie-message">
-                    <h4>We value your privacy</h4>
-                    <p>Essential cookies are always active. We'd like to use analytics cookies to improve your
-                        experience.</p>
-                </div>
-            </div>
-            <div class="cookie-actions">
-                <button class="cookie-btn cookie-btn-reject" id="rejectCookies">Reject Analytics</button>
-                <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept All</button>
-            </div>
-        </div>
-    </div>
+<div id="scrollTop" class="scroll-top">
+    <svg class="scroll-loader" width="50" height="50">
+        <circle cx="25" cy="25" r="23" stroke-width="2" fill="none" stroke-dasharray="145" stroke-dashoffset="145"/>
+    </svg>
+    <i data-lucide="arrow-up" style="width: 20px; height: 20px; color: var(--primary); position: absolute;"></i>
 </div>
 
-<!-- JavaScript -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-    // Dark Mode Toggle
-    function toggleDarkMode() {
+    // Initialize Icons
+    lucide.createIcons();
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // 1. Theme Logic
+        const toggle = document.getElementById('themeBtn');
         const html = document.documentElement;
-        const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const saved = localStorage.getItem('theme');
+        if (saved) html.setAttribute('data-theme', saved);
 
-        html.classList.remove(currentTheme);
-        html.classList.add(newTheme);
-        localStorage.setItem('theme', newTheme);
-    }
-
-    // Load theme from localStorage on page load
-    function loadTheme() {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.classList.remove('light', 'dark');
-        document.documentElement.classList.add(savedTheme);
-    }
-
-    // Mobile Menu Functions
-    function toggleMobileMenu() {
-        const overlay = document.getElementById('mobile-overlay');
-        const panel = document.getElementById('mobile-panel');
-        const hamburger = document.getElementById('hamburger');
-
-        overlay.classList.toggle('open');
-        panel.classList.toggle('open');
-        hamburger.classList.toggle('open');
-        document.body.style.overflow = panel.classList.contains('open') ? 'hidden' : '';
-    }
-
-    function closeMobileMenu() {
-        const overlay = document.getElementById('mobile-overlay');
-        const panel = document.getElementById('mobile-panel');
-        const hamburger = document.getElementById('hamburger');
-
-        overlay.classList.remove('open');
-        panel.classList.remove('open');
-        hamburger.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    // Countdown Timer
-    function updateCountdown() {
-        const blackFriday = new Date('2025-11-28T00:00:00').getTime();
-        const now = new Date().getTime();
-        const difference = blackFriday - now;
-
-        if (difference > 0) {
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        } else {
-            document.getElementById('days').textContent = '00';
-            document.getElementById('hours').textContent = '00';
-            document.getElementById('minutes').textContent = '00';
-            document.getElementById('seconds').textContent = '00';
-        }
-    }
-
-    // Confetti Effect
-    function createConfetti() {
-        const container = document.getElementById('confetti-container');
-        if (!container) return;
-
-        const colors = ['#FF6B35', '#00B4D8', '#06D6A0', '#FFB627', '#EF476F', '#9333EA'];
-        const shapes = ['confetti-circle', 'confetti-square', 'confetti-triangle'];
-        const confettiCount = 30;
-
-        for (let i = 0; i < confettiCount; i++) {
-            setTimeout(() => {
-                const confetti = document.createElement('div');
-                const shape = shapes[Math.floor(Math.random() * shapes.length)];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-
-                confetti.className = `confetti ${shape}`;
-                confetti.style.left = `${Math.random() * 100}%`;
-                confetti.style.top = `${Math.random() * 30}%`;
-                confetti.style.backgroundColor = shape !== 'confetti-triangle' ? color : 'transparent';
-                confetti.style.borderBottomColor = shape === 'confetti-triangle' ? color : 'transparent';
-                confetti.style.animationDuration = `${2 + Math.random() * 2}s`;
-                confetti.style.animationDelay = `${Math.random() * 0.5}s`;
-
-                const size = 6 + Math.random() * 8;
-                if (shape !== 'confetti-triangle') {
-                    confetti.style.width = `${size}px`;
-                    confetti.style.height = `${size}px`;
-                }
-
-                container.appendChild(confetti);
-
-                setTimeout(() => {
-                    confetti.remove();
-                }, 4000);
-            }, i * 50);
-        }
-    }
-
-    // Trigger confetti randomly between 45-90 seconds
-    function scheduleConfetti() {
-        const delay = 45000 + Math.random() * 45000;
-        setTimeout(() => {
-            createConfetti();
-            scheduleConfetti();
-        }, delay);
-    }
-
-    // Initial confetti burst after page load
-    setTimeout(createConfetti, 1500);
-    scheduleConfetti();
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href.length > 1) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start',
-                    });
-                }
-            }
+        toggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
         });
-    });
 
-    // Initialize
-    loadTheme();
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+        // 2. Scroll to Top
+        const scrollBtn = document.getElementById('scrollTop');
+        const circle = document.querySelector('.scroll-loader circle');
+        const radius = circle.r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = circumference;
 
-    // ============================================
-    // HERO DEMO SECTION (in the gradient box)
-    // ============================================
-    const heroScenarios = {
-        concert: {
-            query: 'Find Coldplay tickets in London',
-            icon: '🎫',
-            results: [
-                {code: 'MUSIC25', discount: '25% off tickets', savings: '$120'},
-                {code: 'EARLYBIRD', discount: '15% early booking', savings: '$75'},
-            ],
-        },
-        flight: {
-            query: 'Flights to NYC for Christmas',
-            icon: '✈️',
-            results: [
-                {code: 'HOLIDAY50', discount: '$50 off flights', savings: '$50'},
-                {code: 'WINTER25', discount: '25% winter deals', savings: '$200'},
-            ],
-        },
-        streaming: {
-            query: 'Netflix alternatives discount',
-            icon: '📺',
-            results: [
-                {code: 'STREAM3MO', discount: '3 months free', savings: '$45'},
-                {code: 'ANNUAL40', discount: '40% off annual', savings: '$48'},
-            ],
-        },
-    };
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+            circle.style.strokeDashoffset = circumference - (scrollPercent * circumference);
 
-    let heroCurrentScenario = 'concert';
-    let heroDemoRunning = false;
-
-    async function heroTypeText(element, text, speed = 35) {
-        element.innerHTML = '';
-        const cursor = document.createElement('span');
-        cursor.className = 'typing-cursor';
-        element.appendChild(cursor);
-
-        for (let i = 0; i < text.length; i++) {
-            const textNode = document.createTextNode(text[i]);
-            element.insertBefore(textNode, cursor);
-            await new Promise(resolve => setTimeout(resolve, speed));
-        }
-
-        cursor.remove();
-    }
-
-    function showHeroStatus(message, duration = 1000) {
-        return new Promise(resolve => {
-            const statusEl = document.getElementById('hero-demo-status');
-            statusEl.innerHTML = `
-                    <div class="flex items-center justify-center gap-2">
-                        <div class="relative h-4 w-4">
-                            <div class="absolute inset-0 rounded-full border-2 border-primary-500/30"></div>
-                            <div class="absolute inset-0 rounded-full border-2 border-primary-500 border-t-transparent animate-spin"></div>
-                        </div>
-                        <span class="text-xs font-medium text-neutral-400">${message}</span>
-                    </div>
-                `;
-            setTimeout(() => {
-                statusEl.innerHTML = '';
-                resolve();
-            }, duration);
+            if (scrollTop > 300) scrollBtn.classList.add('visible');
+            else scrollBtn.classList.remove('visible');
         });
-    }
+        scrollBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
 
-    function displayHeroResults(results, icon) {
-        const resultsEl = document.getElementById('hero-demo-results');
-        resultsEl.innerHTML = '';
+        // 3. Mobile Menu (Drawer with Overlay)
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('mobileOverlay');
+        let isOpen = false;
 
-        results.forEach((result, index) => {
-            const card = document.createElement('div');
-            card.className = 'hero-result-card flex items-center justify-between rounded-lg bg-gradient-to-r from-success-500/10 to-success-600/5 border border-success-500/30 px-4 py-3';
-            card.style.animationDelay = `${index * 0.15}s`;
-            card.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <span class="text-xl float-icon" style="animation-delay: ${index * 0.5}s">${icon}</span>
-                        <div>
-                            <span class="inline-block rounded bg-success-500/20 px-2 py-0.5 text-xs font-bold text-success-400">${result.code}</span>
-                            <p class="text-xs text-neutral-400 mt-0.5">${result.discount}</p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm font-bold text-success-400">Save ${result.savings}</p>
-                    </div>
-                `;
-            resultsEl.appendChild(card);
-        });
-    }
-
-    async function runHeroDemo(scenario) {
-        if (heroDemoRunning) return;
-        heroDemoRunning = true;
-
-        const data = heroScenarios[scenario];
-        const queryEl = document.getElementById('hero-demo-query');
-        const resultsEl = document.getElementById('hero-demo-results');
-
-        resultsEl.innerHTML = '';
-
-        await heroTypeText(queryEl, data.query, 30);
-        await showHeroStatus('Searching 200+ sources...', 800);
-        await showHeroStatus('Verifying codes...', 600);
-
-        displayHeroResults(data.results, data.icon);
-
-        heroDemoRunning = false;
-    }
-
-    document.querySelectorAll('.hero-demo-chip').forEach(chip => {
-        chip.addEventListener('click', function () {
-            if (heroDemoRunning) return;
-
-            document.querySelectorAll('.hero-demo-chip').forEach(c => c.classList.remove('active'));
-            this.classList.add('active');
-
-            heroCurrentScenario = this.dataset.scenario;
-            runHeroDemo(heroCurrentScenario);
-        });
-    });
-
-    setTimeout(() => {
-        runHeroDemo('concert');
-    }, 800);
-
-    let autoCycleInterval;
-
-    function startAutoCycle() {
-        const scenarios = ['concert', 'flight', 'streaming'];
-        let currentIndex = 0;
-
-        autoCycleInterval = setInterval(() => {
-            if (heroDemoRunning) return;
-
-            currentIndex = (currentIndex + 1) % scenarios.length;
-            const nextScenario = scenarios[currentIndex];
-
-            document.querySelectorAll('.hero-demo-chip').forEach(c => c.classList.remove('active'));
-            document.querySelector(`.hero-demo-chip[data-scenario="${nextScenario}"]`).classList.add('active');
-
-            heroCurrentScenario = nextScenario;
-            runHeroDemo(nextScenario);
-        }, 8000);
-    }
-
-    setTimeout(startAutoCycle, 5000);
-
-    document.querySelectorAll('.hero-demo-chip').forEach(chip => {
-        chip.addEventListener('click', function () {
-            clearInterval(autoCycleInterval);
-            setTimeout(startAutoCycle, 15000);
-        });
-    });
-
-    // ============================================
-    // COOKIE CONSENT MANAGEMENT (GDPR Compliant)
-    // ============================================
-    const cookieBanner = document.getElementById('cookieBanner');
-    const acceptBtn = document.getElementById('acceptCookies');
-    const rejectBtn = document.getElementById('rejectCookies');
-
-    // Check if user has already made a choice
-    function checkCookieConsent() {
-        const consent = localStorage.getItem('huntaa_cookie_consent');
-
-        if (!consent) {
-            // No consent recorded, show banner after a brief delay
-            setTimeout(() => {
-                cookieBanner.classList.add('show');
-            }, 1000);
-        } else if (consent === 'accepted') {
-            // User accepted, load analytics
-            loadAnalytics();
-        }
-        // If rejected, we simply don't load analytics
-    }
-
-    // Load Google Analytics (only when accepted)
-    function loadAnalytics() {
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-GB6X574Q1V';
-        document.head.appendChild(script);
-
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
+        function toggleMenu() {
+            isOpen = !isOpen;
+            menu.classList.toggle('open', isOpen);
+            overlay.classList.toggle('open', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         }
 
-        gtag('js', new Date());
-        gtag('config', 'G-GB6X574Q1V');
-    }
+        menuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        window.closeMenu = () => {
+            if (isOpen) toggleMenu();
+        };
 
-    // Accept cookies
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('huntaa_cookie_consent', 'accepted');
-        cookieBanner.classList.remove('show');
-        setTimeout(() => {
-            cookieBanner.style.display = 'none';
-        }, 400);
-        loadAnalytics();
-    });
-
-    // Reject cookies
-    rejectBtn.addEventListener('click', () => {
-        localStorage.setItem('huntaa_cookie_consent', 'rejected');
-        cookieBanner.classList.remove('show');
-        setTimeout(() => {
-            cookieBanner.style.display = 'none';
-        }, 400);
-    });
-
-    // Initialize cookie consent check
-    checkCookieConsent();
-</script>
-
-<!-- Scroll to Top Button -->
-<div class="scroll-to-top" id="scrollToTop">
-    <button class="scroll-to-top-btn" onclick="scrollToTop()" aria-label="Scroll to top">
-        <svg class="scroll-progress-ring" viewBox="0 0 54 54">
-            <circle class="scroll-progress-bg" cx="27" cy="27" r="24"></circle>
-            <circle class="scroll-progress-bar" id="scrollProgressBar" cx="27" cy="27" r="24"></circle>
-        </svg>
-        <svg class="scroll-to-top-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
-        </svg>
-    </button>
-</div>
-
-<!-- Scroll to Top Script (after element exists) -->
-<script>
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    const progressBar = document.getElementById('scrollProgressBar');
-    const circumference = 2 * Math.PI * 24;
-
-    function updateScrollProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = scrollTop / docHeight;
-        const offset = circumference - (scrollPercent * circumference);
-
-        if (progressBar) {
-            progressBar.style.strokeDashoffset = offset;
-        }
-
-        if (scrollTop > 300) {
-            scrollToTopBtn.classList.add('visible');
-        } else {
-            scrollToTopBtn.classList.remove('visible');
-        }
-    }
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    }
-
-    window.addEventListener('scroll', updateScrollProgress, {passive: true});
-    updateScrollProgress();
-</script>
-
-<!-- Coming Soon Modal -->
-<div class="modal-overlay" id="comingSoonModal">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeComingSoonModal()" aria-label="Close">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <div class="modal-icon">
-            <svg class="w-10 h-10 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-        </div>
-        <div class="modal-badge">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-            Launching Black Friday 2025
-        </div>
-        <h3 class="modal-title" id="modalTitle">Coming Soon!</h3>
-        <p class="modal-description" id="modalDescription">
-            We're putting the finishing touches on this feature. Get ready to discover amazing deals and save like never
-            before!
-        </p>
-        <button class="modal-btn" onclick="closeComingSoonModal()">
-            Got it, I'm excited!
-        </button>
-    </div>
-</div>
-
-<!-- Coming Soon Modal Script -->
-<script>
-    const comingSoonModal = document.getElementById('comingSoonModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-
-    const modalContent = {
-        deals: {
-            title: 'Deals Coming Soon!',
-            description: 'Our AI is busy hunting down the best deals for you. Get ready to discover exclusive discounts and save like never before!',
-        },
-        search: {
-            title: 'Search Coming Soon!',
-            description: 'Our powerful AI search is almost ready. Soon you\'ll be able to find any deal instantly with natural language!',
-        },
-    };
-
-    function openComingSoonModal(type) {
-        const content = modalContent[type] || modalContent.deals;
-        modalTitle.textContent = content.title;
-        modalDescription.textContent = content.description;
-        comingSoonModal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeComingSoonModal() {
-        comingSoonModal.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    // Close on overlay click
-    comingSoonModal.addEventListener('click', function (e) {
-        if (e.target === comingSoonModal) {
-            closeComingSoonModal();
-        }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && comingSoonModal.classList.contains('open')) {
-            closeComingSoonModal();
-        }
-    });
-
-    // Intercept /deals and /search links
-    document.addEventListener('click', function (e) {
-        const link = e.target.closest('a');
-        if (link) {
-            const href = link.getAttribute('href');
-            if (href === '/deals') {
-                e.preventDefault();
-                openComingSoonModal('deals');
-            } else if (href === '/search') {
-                e.preventDefault();
-                openComingSoonModal('search');
-            }
-        }
+        // 4. Fade In Observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     });
 </script>
 </body>
