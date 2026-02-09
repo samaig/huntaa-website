@@ -1,0 +1,38 @@
+{
+  "name": "Huntaa - AI-Powered Discount Code Finder",
+  "short_name": "Huntaa",
+  "description": "Find verified discount codes and working promo codes for 1000+ brands. AI-verified savings on shopping, travel, events and subscriptions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9F5",
+  "theme_color": "#E08560",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-GB",
+  "categories": ["shopping", "finance", "lifestyle"],
+  "icons": [
+    {
+      "src": "./assets/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./assets/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Huntaa - AI-Powered Discount Code Finder"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

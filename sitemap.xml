@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 ">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://huntaa.com/</loc>
+        <lastmod>2025-02-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en-gb" href="https://huntaa.com/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://huntaa.com/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://huntaa.com/"/>
+    </url>
+
+    <!-- App (main product) -->
+    <url>
+        <loc>https://huntaa.app/</loc>
+        <lastmod>2025-02-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>
